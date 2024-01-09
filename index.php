@@ -3,8 +3,11 @@
 error_reporting(E_ALL);
 ini_set("display_errors", 1);
 
+$products = include __DIR__ . '/Models/db.php';
+require_once __DIR__ . '/components/function.php';
 
-// Include necessary classes
+/*
+// includere classi necessarie
 include __DIR__ . '/Models/Category.php';
 include __DIR__ . '/Models/Food.php';
 include __DIR__ . '/Models/Beds.php';
@@ -28,15 +31,37 @@ $dogBed1 = new Beds("Circular dog bed", 40.00, 'assets/dog-bed.jpg', $dogCategor
 $dogFood2 = new Food("Sensitive - Turkey & Chicken", 25.00, '../assets/dog-dry-food', $dogCategory, "2024-12-31");
 $dogToy2 = new Toys("Chewable squeaky toy", 7.50, '/assets/dog-toy.png', $dogCategory, 'Cordura');
 $dogBed2 = new Beds("Circular dog bed", 45.00, 'assets/dog-bed.jpg', $dogCategory, 'indoor', 'XL');
+*/
 
 // Debugging 
-var_dump($catFood1, $catFood2);
-var_dump($dogBed1, $dogBed2);
-
-
-
-
-
+// var_dump($products);
 
 
 ?>
+
+<!DOCTYPE html>
+<html lang="en">
+<?php include __DIR__ . '/partials/head.php'; ?>
+
+<body>
+    <?php include __DIR__ . '/partials/header.php'; ?>
+    <main>
+        <div class="container">
+            <div class="row">
+                
+                    <?php
+                    foreach ($products as $product) {
+                        echo createProductCard($product);
+                    }
+                    ?>
+                
+            </div>
+        </div>
+        
+    </main>
+
+    <?php include 'partials/footer.php'; ?>
+</body>
+
+</html>
+</body>

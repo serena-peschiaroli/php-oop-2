@@ -26,6 +26,19 @@ class Beds extends Product
     {
         $this->size = $_size;
     }
+
+
+    // Getter per type
+    public function getType()
+    {
+        return $this->type;
+    }
+
+    // Getter per size
+    public function getSize()
+    {
+        return $this->size;
+    }
 }
 
 
