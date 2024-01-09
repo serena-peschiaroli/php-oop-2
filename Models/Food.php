@@ -1,5 +1,5 @@
 <?php
-require_once "Product.php";
+require __DIR__ . '/Product.php';
 
 class Food extends Product
 {

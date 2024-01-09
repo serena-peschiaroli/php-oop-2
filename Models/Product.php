@@ -1,5 +1,5 @@
 <?php
-require_once "Category.php";
+require_once __DIR__ . '/Category.php' ;
 
 
 class Product {
@@ -7,6 +7,15 @@ class Product {
     protected $price;
     protected $image;
     protected $category;
+
+    // Constructor
+    public function __construct($_name, $_price, $_image, $_category)
+    {
+        $this->setName($_name);
+        $this->setPrice($_price);
+        $this->setImage($_image);
+        $this->setCategory($_category);
+    }
 
     // Getters
     public function getName() {
