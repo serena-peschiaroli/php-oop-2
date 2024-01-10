@@ -2,10 +2,15 @@
 
 trait Discountable
 {
-    public function getDiscount($percent)
+    public function applyDiscount($percent)
     {
-        $this->price -= ($this->price * $percent / 100);
+        if ($percent > 0 && $percent <= 100) {
+            $this->price -= ($this->price * $percent / 100);
+        } else {
+            throw new Exception("Percentuale di sconto non valida!");
+        }
     }
+
 }
 
 

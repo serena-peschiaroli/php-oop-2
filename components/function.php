@@ -6,7 +6,7 @@ require_once __DIR__ . '/../Models/db.php';
 
 
 
-function createProductCard($product)
+/*function createProductCard($product)
 {
     $html = '<div class="card">';
     $html .= '<img src="' . $product->getImage() . '" alt="' . $product->getName() . '">';
@@ -24,12 +24,12 @@ function createProductCard($product)
 
     $html .= '</div>';
     return $html;
-}
+}*/
 
 
 
 
-/*
+
 function createProductCard($product) {
     try {
         if (!$product) {
@@ -60,7 +60,7 @@ function createProductCard($product) {
         // gestisci l' exception
         return '<p>Errore: ' . $e->getMessage() . '</p>';
     }
-}*/ 
+}
 
 
 

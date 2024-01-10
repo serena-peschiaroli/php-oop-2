@@ -1,5 +1,6 @@
 <?php
 require_once __DIR__ . '/Category.php' ;
+require_once __DIR__ . '/../components/Discountable.php';
 
 
 class Product {
@@ -52,7 +53,7 @@ class Product {
     }
 
     //sconto in percentuale
-    public function getDiscount($percent)
+    public function applyDiscount($percent)
     {
         $this->price -= ($this->price * $percent / 100);
     }
