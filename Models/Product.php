@@ -50,6 +50,12 @@ class Product {
     public function setCategory($category) {
         $this->category = $category;
     }
+
+    //sconto in percentuale
+    public function getDiscount($percent)
+    {
+        $this->price -= ($this->price * $percent / 100);
+    }
 }
 ?>
 

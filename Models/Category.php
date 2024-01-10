@@ -12,7 +12,7 @@ class Category
 
     public function setName($_name)
     {
-        if ($_name === 'Cat' || $_name === 'Dog' && (strlen($_name) < 30)) {
+        if (($_name === 'Cat' || $_name === 'Dog' && strlen($_name) < 30)) {
             $this->name = $_name;
 
         }
