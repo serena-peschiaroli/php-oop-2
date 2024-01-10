@@ -4,10 +4,12 @@ require_once __DIR__ . '/../components/Discountable.php';
 
 
 class Product {
+    use Discountable;
     protected $name;
     protected $price;
     protected $image;
     protected $category;
+    
 
     // Constructor
     public function __construct($_name, $_price, $_image, $_category)
@@ -16,6 +18,10 @@ class Product {
         $this->setPrice($_price);
         $this->setImage($_image);
         $this->setCategory($_category);
+        if ($_price < 0) {
+            throw new Exception("Price cannot be negative.");
+        }
+        
     }
 
     // Getters
@@ -52,11 +58,7 @@ class Product {
         $this->category = $category;
     }
 
-    //sconto in percentuale
-    public function applyDiscount($percent)
-    {
-        $this->price -= ($this->price * $percent / 100);
-    }
+
 }
 ?>
 
